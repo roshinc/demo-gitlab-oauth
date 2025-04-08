@@ -9,6 +9,21 @@
 <p>Your GitLab username is <strong th:text="${username}">username</strong>.</p>
 <img th:src="${avatar}" alt="Avatar" width="100"/><br/><br/>
 
+<h2>Your GitLab Issues in This Project</h2>
+
+<div th:if="${issuesError}">
+    <p th:text="${issuesError}" style="color: red;"></p>
+</div>
+
+<ul th:if="${issues}">
+    <li th:each="issue : ${issues}">
+        <strong th:text="${issue.title}">Issue Title</strong>
+        <br/>
+        <span th:text="${issue.state}">state</span> —
+        <a th:href="${issue.web_url}" target="_blank">View on GitLab</a>
+    </li>
+</ul>
+
 <a href="/new-issue">➕ Create a GitLab Issue</a>
 </body>
 </html>
