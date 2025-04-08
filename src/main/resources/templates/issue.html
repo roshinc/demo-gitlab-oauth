@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Issue</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h2>Create a GitLab Issue</h2>
+<form action="/create-issue" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+    <label for="title">Title:</label><br/>
+    <input type="text" name="title" id="title" required/><br/>
+    <label for="description">Description:</label><br/>
+    <textarea name="description" id="description" rows="5" cols="40" required></textarea><br/><br/>
+    <button type="submit">Create Issue</button>
+</form>
+<p><a href="/">⬅️ Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Welcome, <span th:text="${name}">User</span>!</h1>
+<p>Your GitLab username is <strong th:text="${username}">username</strong>.</p>
+<img th:src="${avatar}" alt="Avatar" width="100"/><br/><br/>
+
+<a href="/new-issue">➕ Create a GitLab Issue</a>
+</body>
+</html>
